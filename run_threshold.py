@@ -45,15 +45,5 @@ for i, name in enumerate(name_list):
     plt.axis('off')
     plt.savefig(f"thresholding/{name}.png", dpi=my_dpi)
 
-#local doesnt work
-#for i, name in enumerate(name_list):
-#    img_flat = np.empty(0)
-#    img = io.imread(f"./{image_set}/{name}.png", as_gray=True)
-    #ret,bin_img = cv2.threshold(img,127,255,cv2.THRESH_TRUNC)
- #   radius = 15
-#    selem = disk(radius)
-#    local_t = rank.otsu(img, selem)
-#    plt.imshow(img >=local_t, cmap=plt.cm.gray)
-#    plt.savefig(f"local_thresholding/{name}.png")
-    
+
 
