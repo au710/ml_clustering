@@ -32,11 +32,6 @@ all_flat = []
 for i, name in enumerate(name_list):
     img_flat = np.empty(0)
     img = io.imread(f"./{image_set}/{name}.png", as_gray=True)
-#    thresh = threshold_otsu(img)
-#    bin_img = img > thresh
-    #ret,bin_img = cv2.threshold(img,127,255,cv2.THRESH_TRUNC)
-#    plt.imshow(bin_img)
-#    plt.savefig(f"thresholding/{name}.png")
     img_flat = np.append(img_flat, img.flatten())
     all_flat.append(img_flat)
 
