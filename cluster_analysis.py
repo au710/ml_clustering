@@ -37,8 +37,8 @@ plt.figure()
 #plot clustering
 for id, cluster in clusters:
     plt.scatter(cluster["0"], cluster["1"], label=id)
-    for index, row in cluster.iterrows():
-        plt.text(row["0"]+0.5, row["1"], row["cluster"], size=10)
+#    for index, row in cluster.iterrows():
+#        plt.text(row["0"]+0.5, row["1"], row["cluster"], size=10)
 plt.legend(loc=0)
 plt.xlabel("PC1", size=15)
 plt.ylabel("PC2", size=15)

@@ -49,10 +49,14 @@ pca_df["cat"] = category
 
 # Visualise PCA results
 groups = pca_df.groupby("cat")
+plt.figure()
 for name, group in groups:
     plt.scatter(group[0], group[1], label=name)
 #plt.legend(loc="best")
-plt.savefig("./results/pca_cluster.pdf")
+plt.xlabel("PC1", size=15)
+plt.ylabel("PC2", size=15)
+plt.tight_layout()
+plt.savefig("./results/pca_cluster.png")
 
 pca_df.to_csv("pca.csv")
 
