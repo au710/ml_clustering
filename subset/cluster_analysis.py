@@ -27,7 +27,7 @@ X = np.array(pca_df[["0", "1"]])
 
 # number of clusters found by elbow method
 #y_pred = KMeans(n_clusters=4).fit_predict(X)
-kmeanModel = KMeans(n_clusters=4).fit(X)
+kmeanModel = KMeans(n_clusters=3).fit(X)
 y_pred=kmeanModel.predict(X)
 pca_df["cluster"] = y_pred
 pca_df.to_csv("clusters.csv")
@@ -61,7 +61,7 @@ for cluster_id, cluster in clusters:
     for j, label in enumerate(cluster.label):
         print(label)
         selection.append(label)
-        os.system(f"cp assets/{label}* {cluster_dir}")
+        os.system(f"cp coloured/{label}* {cluster_dir}")
         column = j + 1
         plt.subplot(1, span, column)
         plt.axis("off")
@@ -93,7 +93,7 @@ for s in selections:
         column = j + 1
         plt.subplot(1, span, column)
         plt.axis("off")
-        fpath = f"assets/{label}.png"
+        fpath = f"coloured/{label}.png"
         plt.imshow(io.imread(fpath))
     plt.savefig(f"results/clusterRND_{i}.png")
     i+=1
